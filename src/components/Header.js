@@ -1,82 +1,40 @@
-import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Link from "@material-ui/core/Link";
-import Box from "@material-ui/core/Box";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
-//NEW Desktop NavBar
-import Grid from "@material-ui/core/Grid";
-
-const useStyles = makeStyles({
-  header: {
-    backgroundColor: "white",
+const useStyles = makeStyles((theme) => ({
+  root: {
     flexGrow: 1,
-    padding: "0.6rem 3rem",
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
   },
   title: {
     flexGrow: 1,
   },
-  linkGrid: {
-    width: 350,
-  },
-  profile: {
-    "&:hover": {
-      opacity: 0.8,
-    },
-  },
-  drawerContainer: {
-    padding: "30px 30px",
-  },
-});
+}));
 
-export default function Header() {
+export default function ButtonAppBar() {
   const classes = useStyles();
 
-  // DESKTOP SETUP
-  const Content = () => {
-    return (
-      <Toolbar>
-        <Grid
-          container
-          direction="row"
-          justify="space-between"
-          alignItems="center"
-        >
-          <Grid item>
-            Logo
-          </Grid>
-          <Grid item className={classes.linkGrid}>
-            <Grid
-              container
-              direction="row"
-              justify="space-between"
-              alignItems="center"
-            >
-              <Link>Home</Link>
-              <Box
-                display="flex"
-                justifyContent="space-between"
-                alignItems="center"
-                classes={classes.profileBox}
-                style={{ width: 130 }}
-              >
-                <p>Profile Photo</p>
-              </Box>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Toolbar>
-    );
-  };
-
-
-  
   return (
-    <header>
-      <AppBar className={classes.header} position="static">
-        <Content/>
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" className={classes.title}>
+            News
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
       </AppBar>
-    </header>
+    </div>
   );
 }
