@@ -33,11 +33,11 @@ export default function ButtonAppBar() {
           <Typography variant="h5" className={classes.title}>
             SM Ecom
           </Typography>
-          <Link href='#' color="inherit" style={{paddingRight: 25}}>Shop</Link>
-          <Link href='#' color="inherit" style={{paddingRight: 15}}>Ask a Question</Link>
-          <IconButton color="inherit">
-          <ShoppingCartIcon/>
-          </IconButton>
+          <Link href='/shop' color="inherit" style={{paddingRight: 25}}>Shop</Link>
+          <Link href='/question' color="inherit" style={{paddingRight: 15}}>Ask a Question</Link>
+          <Link href='/cart'color="inherit">
+            <ShoppingCartIcon/>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>
