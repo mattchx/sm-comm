@@ -30,13 +30,13 @@ export default function ButtonAppBar() {
           <Typography variant="h5" className={classes.title}>
             SM Ecom
           </Typography>
-          <Link to="/shop" style={{ paddingRight: 25 }}>
+          <Link to="/shop" style={{ paddingRight: 25, color: 'white' }}>
             Shop
           </Link>
-          <Link to="/question" style={{ paddingRight: 15 }}>
+          <Link to="/question" style={{ paddingRight: 15,color: 'white', }}>
             Ask a Question
           </Link>
-          <Link to="/cart">
+          <Link to="/cart" style={{color: 'white' }}>
             <ShoppingCartIcon />
           </Link>
         </Toolbar>
