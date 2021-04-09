@@ -35,13 +35,11 @@ function Shop() {
 
   const classes = useStyles();
   const dispatch = useDispatch();
-  const itemsInCart = useSelector((state) => state.items);
-
+  
   useEffect(() => {
     fetchData();
     console.log('useEffect runs');
-    console.log(itemsInCart)
-  }, [dispatch]);
+  }, []);
 
   return (
     <Grid container direction="column" alignItems="center" justify="center">
@@ -78,8 +76,7 @@ function Shop() {
           </Card>
         ))}
 
-      {itemsInCart &&
-        itemsInCart.map((item) => <p key={item.id}>{item.title}</p>)}
+      
     </Grid>
   );
 }
