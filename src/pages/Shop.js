@@ -40,6 +40,7 @@ function Shop() {
   useEffect(() => {
     fetchData();
     console.log('useEffect runs');
+    console.log(itemsInCart)
   }, [dispatch]);
 
   return (
@@ -78,7 +79,7 @@ function Shop() {
         ))}
 
       {itemsInCart &&
-        itemsInCart.map((item) => <p key={item.id}>item.title</p>)}
+        itemsInCart.map((item) => <p key={item.id}>{item.title}</p>)}
     </Grid>
   );
 }
